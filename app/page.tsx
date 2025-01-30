@@ -37,6 +37,10 @@ export default function Home() {
     setTotalTVL((prevTVL) => Math.max(0, prevTVL - amount * tokenPrice[currentToken]))
   }
 
+  const resetDepositAmount = () => {
+    setDepositAmount(0)
+  }
+
   const actualDeposit = suiDeposit * tokenPrice.SUI + usdcDeposit * tokenPrice.USDC
 
   return (
@@ -54,6 +58,7 @@ export default function Home() {
           onWithdraw={handleWithdraw}
           suiDeposit={suiDeposit}
           usdcDeposit={usdcDeposit}
+          resetDepositAmount={resetDepositAmount}
         />
         <Summary depositAmount={depositAmount} totalTVL={totalTVL} currentToken={currentToken} />
         <RisksBreakdown />
