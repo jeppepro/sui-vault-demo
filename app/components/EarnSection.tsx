@@ -13,6 +13,7 @@ interface EarnSectionProps {
   onWithdraw: (amount: number) => void
   suiDeposit: number
   usdcDeposit: number
+  resetDepositAmount: () => void
 }
 
 export default function EarnSection({
@@ -24,6 +25,7 @@ export default function EarnSection({
   onWithdraw,
   suiDeposit,
   usdcDeposit,
+  resetDepositAmount,
 }: EarnSectionProps) {
   const [isDeposit, setIsDeposit] = useState(true)
   const [inputValue, setInputValue] = useState("")
@@ -71,16 +73,24 @@ export default function EarnSection({
     setDepositAmount(maxAmount)
   }
 
+  const handleModeChange = (newMode: boolean) => {
+    if (newMode !== isDeposit) {
+      setIsDeposit(newMode)
+      resetDepositAmount()
+      setInputValue("")
+    }
+  }
+
   return (
     <div className="wrap" style={{ gap: "8px" }}>
       <h2>Earn</h2>
       <div className="toggle-container">
         <div className="toggle toggle-full-width">
           <div className="toggle-highlight" style={{ transform: isDeposit ? "translateX(0)" : "translateX(100%)" }} />
-          <div className="toggle-option" onClick={() => setIsDeposit(true)}>
+          <div className="toggle-option" onClick={() => handleModeChange(true)}>
             <p className={isDeposit ? "toggle-select" : "toggle-nonselect"}>Deposit</p>
           </div>
-          <div className="toggle-option" onClick={() => setIsDeposit(false)}>
+          <div className="toggle-option" onClick={() => handleModeChange(false)}>
             <p className={!isDeposit ? "toggle-select" : "toggle-nonselect"}>Withdraw</p>
           </div>
         </div>
