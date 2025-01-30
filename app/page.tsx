@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import { useState } from "react"
 import Navbar from "./components/Navbar"
 import Portfolio from "./components/Portfolio"
 import EarnSection from "./components/EarnSection"
@@ -14,7 +14,7 @@ export default function Home() {
   const [currentToken, setCurrentToken] = useState("SUI")
   const [totalTVL, setTotalTVL] = useState(13567985) // Starting with the provided TVL
 
-  const tokenPrice = {
+  const tokenPrice: { [key: string]: number } = {
     SUI: 4.09,
     USDC: 0.998,
   }
