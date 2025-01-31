@@ -460,3 +460,28 @@ p {
   color: #ff1111;
 }
 
+.btn-primary,
+.btn-secondary {
+  transition-property: background-color, color;
+  transition-duration: 100ms;
+  transition-timing-function: ease;
+}
+
+.btn-primary:hover {
+  background-color: #0030f0;
+}
+
+.btn-primary:active {
+  background-color: #002cdb;
+  color: #dbe2ff;
+}
+
+.btn-secondary:hover {
+  background-color: #dde4fd;
+}
+
+.btn-secondary:active {
+  background-color: #cdd5f9;
+  color: #2f53e1;
+}
+
