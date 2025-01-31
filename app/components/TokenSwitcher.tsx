@@ -28,7 +28,7 @@ export default function TokenSwitcher({ currentToken, onToggle }: TokenSwitcherP
 
   return (
     <div className="token-picker flex items-center gap-2 cursor-pointer group" onClick={onToggle}>
-      <div className="relative w-[100px] h-[38px] overflow-hidden">
+      <div className="relative w-[140px] h-[38px] overflow-hidden">
         <AnimatePresence initial={false} mode="popLayout">
           <motion.div
             key={currentToken}
@@ -41,7 +41,7 @@ export default function TokenSwitcher({ currentToken, onToggle }: TokenSwitcherP
               y: { type: "spring", stiffness: 500, damping: 25 },
               opacity: { duration: 0.15 },
             }}
-            className="flex items-center justify-end gap-2 absolute inset-0 flex-row"
+            className="flex items-center justify-end gap-2 absolute inset-0"
           >
             {currentToken === "SUI" ? (
               <>
