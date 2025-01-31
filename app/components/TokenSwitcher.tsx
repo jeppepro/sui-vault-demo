@@ -13,7 +13,7 @@ interface TokenSwitcherProps {
 export default function TokenSwitcher({ currentToken, onToggle }: TokenSwitcherProps) {
   const variants = {
     initial: (isSUI: boolean) => ({
-      y: isSUI ? -30 : 30,
+      y: isSUI ? -38 : 38,
       opacity: 0,
     }),
     animate: {
@@ -21,7 +21,7 @@ export default function TokenSwitcher({ currentToken, onToggle }: TokenSwitcherP
       opacity: 1,
     },
     exit: (isSUI: boolean) => ({
-      y: isSUI ? 30 : -30,
+      y: isSUI ? 38 : -38,
       opacity: 0,
     }),
   }
