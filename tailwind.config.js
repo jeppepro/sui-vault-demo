@@ -5,8 +5,6 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "app/**/*.{ts,tsx}",
-    "components/**/*.{ts,tsx}",
   ],
   theme: {
     extend: {
@@ -53,5 +51,14 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
+  safelist: [
+    "hover:bg-[#0030F0]",
+    "active:bg-[#002CDB]",
+    "active:text-[#DBE2FF]",
+    "hover:text-[#1141ff]",
+    "hover:bg-[#DDE4FD]",
+    "active:bg-[#CDD5F9]",
+    "active:text-[#2F53E1]",
+  ],
 }
 
