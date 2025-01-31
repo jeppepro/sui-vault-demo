@@ -5,10 +5,15 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "app/**/*.{ts,tsx}",
+    "components/**/*.{ts,tsx}",
   ],
   theme: {
     extend: {
       colors: {
+        primary: "#4ba2ff",
+        secondary: "#f1f1f4",
+        muted: "#7d84a0",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
