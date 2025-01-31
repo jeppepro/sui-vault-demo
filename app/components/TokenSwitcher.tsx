@@ -42,7 +42,7 @@ export default function TokenSwitcher({ currentToken, onToggle }: TokenSwitcherP
               opacity: { duration: 0.15 },
             }}
             className="flex items-center justify-end gap-2 absolute inset-0"
-            style={{ display: "flex", flexDirection: "row" }}
+            style={{ display: "flex", flexDirection: "row", gap: "8px", alignItems: "center" }}
           >
             {currentToken === "SUI" ? (
               <>
