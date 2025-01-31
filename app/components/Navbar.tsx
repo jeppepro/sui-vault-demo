@@ -11,7 +11,7 @@ export default function Navbar({ tvl }: NavbarProps) {
         <div className="logo">Logo</div>
         <div className="navbar-right">
           <div className="tvl">TVL: ${tvl.toLocaleString()}</div>
-          <button className="btn-connect bg-[#f1f1f4] text-[#4ba2ff] hover:bg-[#e5ebff] active:bg-[#d9e1ff] transition-colors duration-200">
+          <button className="btn-connect hover:bg-[#DDE4FD] active:bg-[#CDD5F9] active:text-[#2F53E1] transition-colors duration-100">
             <Wallet size={16} />
             <span>Connect</span>
           </button>
