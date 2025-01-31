@@ -13,16 +13,16 @@ interface TokenSwitcherProps {
 export default function TokenSwitcher({ currentToken, onToggle }: TokenSwitcherProps) {
   const variants = {
     initial: {
-      y: 30,
-      opacity: 0,
+      y: "100%",
+      opacity: 1,
     },
     animate: {
       y: 0,
       opacity: 1,
     },
     exit: {
-      y: -30,
-      opacity: 0,
+      y: "-100%",
+      opacity: 1,
     },
   }
 
@@ -38,7 +38,6 @@ export default function TokenSwitcher({ currentToken, onToggle }: TokenSwitcherP
             exit="exit"
             transition={{
               y: { type: "tween", duration: 0.2, ease: "easeOut" },
-              opacity: { duration: 0.1 },
             }}
             className="flex items-center justify-end gap-2 absolute inset-0"
             style={{ display: "flex", flexDirection: "row", gap: "8px", alignItems: "center" }}
