@@ -11,6 +11,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        primary: "#4ba2ff",
+        secondary: "#f1f1f4",
+        muted: "#7d84a0",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -39,14 +47,6 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        "#4ba2ff": "hsl(var(--primary))",
-        "#f1f1f4": "hsl(var(--secondary))",
-        "#7d84a0": "hsl(var(--muted))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -56,8 +56,14 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
+  safelist: [
+    "hover:bg-[#0030F0]",
+    "active:bg-[#002CDB]",
+    "active:text-[#DBE2FF]",
+    "hover:text-[#1141ff]",
+    "hover:bg-[#DDE4FD]",
+    "active:bg-[#CDD5F9]",
+    "active:text-[#2F53E1]",
+  ],
 }
 
