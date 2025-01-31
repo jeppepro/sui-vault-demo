@@ -43,17 +43,19 @@ export default function TokenSwitcher({ currentToken, onToggle }: TokenSwitcherP
             }}
             className="flex items-center justify-end gap-2 absolute inset-0"
           >
-            {currentToken === "SUI" ? (
-              <>
-                <SuiIcon className="token-icon w-6 h-6" />
-                <p className="token-type text-lg font-semibold">SUI</p>
-              </>
-            ) : (
-              <>
-                <UsdcIcon className="token-icon w-6 h-6" />
-                <p className="token-type text-lg font-semibold">USDC</p>
-              </>
-            )}
+            <div className="flex items-center justify-end gap-2 absolute inset-0">
+              {currentToken === "SUI" ? (
+                <>
+                  <SuiIcon className="token-icon w-6 h-6" />
+                  <p className="token-type text-lg font-semibold">SUI</p>
+                </>
+              ) : (
+                <>
+                  <UsdcIcon className="token-icon w-6 h-6" />
+                  <p className="token-type text-lg font-semibold">USDC</p>
+                </>
+              )}
+            </div>
           </motion.div>
         </AnimatePresence>
       </div>
