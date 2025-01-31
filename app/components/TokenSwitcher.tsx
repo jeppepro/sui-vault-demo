@@ -21,7 +21,7 @@ export default function TokenSwitcher({ currentToken, onToggle }: TokenSwitcherP
       opacity: 1,
     },
     exit: (isSUI: boolean) => ({
-      y: isSUI ? -30 : 30,
+      y: isSUI ? 30 : -30,
       opacity: 0,
     }),
   }
