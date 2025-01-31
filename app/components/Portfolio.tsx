@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 
 interface PortfolioProps {
   actualDeposit: number
@@ -47,7 +47,10 @@ export default function Portfolio({ actualDeposit, currentToken }: PortfolioProp
           <p className="stat-value rewards-value">{formatRewards(rewards)}</p>
         </div>
       </div>
-      <button className="btn-secondary" onClick={handleRedeemRewards}>
+      <button
+        className="btn-secondary hover:bg-[#DDE4FD] active:bg-[#CDD5F9] active:text-[#2F53E1] transition-colors duration-100"
+        onClick={handleRedeemRewards}
+      >
         Redeem Rewards
       </button>
     </div>
