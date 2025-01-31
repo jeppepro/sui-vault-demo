@@ -41,18 +41,18 @@ export default function TokenSwitcher({ currentToken, onToggle }: TokenSwitcherP
               y: { type: "spring", stiffness: 500, damping: 25 },
               opacity: { duration: 0.15 },
             }}
-            className="flex items-center justify-end gap-2 absolute inset-0"
+            className="flex items-center justify-end gap-2 absolute inset-0 flex-row"
           >
-            <div className="flex items-center justify-end gap-2 absolute inset-0">
+            <div className="flex items-center justify-end gap-2 w-full">
               {currentToken === "SUI" ? (
                 <>
-                  <SuiIcon className="token-icon w-6 h-6" />
-                  <p className="token-type text-lg font-semibold">SUI</p>
+                  <SuiIcon className="token-icon w-6 h-6 flex-shrink-0" />
+                  <p className="token-type text-lg font-semibold whitespace-nowrap">SUI</p>
                 </>
               ) : (
                 <>
-                  <UsdcIcon className="token-icon w-6 h-6" />
-                  <p className="token-type text-lg font-semibold">USDC</p>
+                  <UsdcIcon className="token-icon w-6 h-6 flex-shrink-0" />
+                  <p className="token-type text-lg font-semibold whitespace-nowrap">USDC</p>
                 </>
               )}
             </div>
