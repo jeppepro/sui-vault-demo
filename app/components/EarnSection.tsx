@@ -1,8 +1,6 @@
 import type React from "react"
 import { useState, useEffect } from "react"
-import { ArrowUpDown } from "lucide-react"
-import SuiIcon from "./icons/SuiIcon"
-import UsdcIcon from "./icons/UsdcIcon"
+import TokenSwitcher from "./TokenSwitcher"
 
 interface EarnSectionProps {
   depositAmount: number
@@ -58,8 +56,6 @@ export default function EarnSection({
     setInputValue("")
   }
 
-  const TokenIcon = currentToken === "SUI" ? SuiIcon : UsdcIcon
-
   const handleHalfAmount = () => {
     const maxBalance = currentToken === "SUI" ? 1000 : 750
     const halfAmount = isDeposit ? maxBalance / 2 : availableAmount / 2
@@ -88,28 +84,32 @@ export default function EarnSection({
         <div className="toggle toggle-full-width">
           <div className="toggle-highlight" style={{ transform: isDeposit ? "translateX(0)" : "translateX(100%)" }} />
           <div className="toggle-option" onClick={() => handleModeChange(true)}>
-            <p className={isDeposit ? "toggle-select" : "toggle-nonselect"}>Deposit</p>
+            <p
+              className={`${isDeposit ? "toggle-select" : "toggle-nonselect"} hover:text-[#1141ff] transition-colors duration-300`}
+            >
+              Deposit
+            </p>
           </div>
           <div className="toggle-option" onClick={() => handleModeChange(false)}>
-            <p className={!isDeposit ? "toggle-select" : "toggle-nonselect"}>Withdraw</p>
+            <p
+              className={`${!isDeposit ? "toggle-select" : "toggle-nonselect"} hover:text-[#1141ff] transition-colors duration-300`}
+            >
+              Withdraw
+            </p>
           </div>
         </div>
       </div>
       <div className="input-box">
-        <div className="input-top">
+        <div className="input-top flex justify-between items-center">
           <input
             type="text"
             inputMode="decimal"
-            className="input-amount"
+            className="input-amount flex-grow mr-2"
             value={inputValue}
             onChange={handleInputChange}
             placeholder="0"
           />
-          <div className="token-picker" onClick={handleToggleToken}>
-            <TokenIcon className="token-icon" />
-            <p className="token-type">{currentToken}</p>
-            <ArrowUpDown className="token-toggle-icon" />
-          </div>
+          <TokenSwitcher currentToken={currentToken} onToggle={handleToggleToken} />
         </div>
         <div className="input-bottom">
           <p className="dollar-eqv font-medium">~${(depositAmount * tokenPrice || 0).toFixed(2)}</p>
@@ -129,7 +129,10 @@ export default function EarnSection({
         </div>
       </div>
       <div className="button-container">
-        <button className="btn-primary btn-full-width" onClick={handleAction}>
+        <button
+          className="btn-primary btn-full-width hover:bg-[#0030F0] active:bg-[#002CDB] active:text-[#DBE2FF] transition-colors duration-100"
+          onClick={handleAction}
+        >
           {isDeposit ? "Deposit" : "Withdraw"}
         </button>
       </div>
